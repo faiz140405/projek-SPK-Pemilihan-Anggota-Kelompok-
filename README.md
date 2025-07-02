@@ -4,22 +4,21 @@
 
 Aplikasi Sistem Pendukung Keputusan (SPK) ini dirancang untuk membantu dalam proses pemilihan anggota tim proyek. Dengan menggunakan kriteria yang dapat disesuaikan dan sistem penilaian, aplikasi ini memberikan rekomendasi anggota tim berdasarkan metode perhitungan SPK.
 
-## Fitur Utama
+## ✨ Fitur Utama
 
-* **Manajemen Kriteria:** Pengguna dapat menambah, mengedit, dan mengelola daftar kriteria yang akan digunakan dalam penilaian (misalnya: Keahlian Teknis, Pengalaman Project, Komunikasi, Ketersediaan Waktu) beserta bobot prioritasnya.
-* **Manajemen Anggota Tim:** Pengguna dapat menambah, mengedit, dan mengelola daftar anggota tim potensial beserta detail informasinya.
-* **Input Penilaian:** Menyediakan antarmuka untuk memberikan nilai/skor pada setiap anggota tim berdasarkan setiap kriteria yang telah ditentukan.
-* **Perhitungan SPK:** Mengimplementasikan metode perhitungan Sistem Pendukung Keputusan (misalnya: Simple Additive Weighting - SAW) untuk menghasilkan skor akhir bagi setiap anggota tim.
-* **Hasil Rekomendasi:** Menampilkan peringkat anggota tim berdasarkan skor SPK yang telah dihitung, mempermudah pengambilan keputusan.
-* **Dashboard Informatif:** Halaman utama yang menyajikan ringkasan statistik (jumlah kriteria, anggota, penilaian) dan visualisasi grafis (misalnya, grafik anggota tim rekomendasi teratas).
-* **Sistem Autentikasi:** Fitur login dan registrasi pengguna untuk mengamankan akses ke fungsi manajemen data (disediakan oleh Laravel Breeze).
+* 📝 **Manajemen Kriteria:** Pengguna dapat menambah, mengedit, dan mengelola daftar kriteria ...
+* 👥 **Manajemen Anggota Tim:** Pengguna dapat menambah, mengedit, dan mengelola daftar anggota tim ...
+* ⭐ **Input Penilaian:** Menyediakan antarmuka untuk memberikan nilai/skor ...
+* 📊 **Hasil Rekomendasi:** Menampilkan peringkat anggota tim berdasarkan skor SPK ...
+* 📈 **Dashboard Informatif:** Halaman utama yang menyajikan ringkasan statistik ...
+* 🔑 **Sistem Autentikasi:** Fitur login dan registrasi pengguna ...
 
-## Teknologi yang Digunakan
+## 🛠️ Teknologi yang Digunakan
 
-* **Backend:** Laravel (PHP Framework)
-* **Database:** MySQL
-* **Frontend:** Blade Templates, Tailwind CSS, Alpine.js (untuk interaktivitas dasar)
-* **Charting Library:** Chart.js (untuk visualisasi data pada dashboard)
+* 💻 **Backend:** Laravel (PHP Framework)
+* 🗄️ **Database:** MySQL
+* 🎨 **Frontend:** Blade Templates, Tailwind CSS, Alpine.js
+* 📊 **Charting Library:** Chart.js
 
 ## Instalasi dan Setup Proyek
 
