@@ -1,59 +1,107 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Aplikasi SPK Pemilihan Tim Proyek
 
-## About Laravel
+Aplikasi Sistem Pendukung Keputusan (SPK) ini dirancang untuk membantu dalam proses pemilihan anggota tim proyek. Dengan menggunakan kriteria yang dapat disesuaikan dan sistem penilaian, aplikasi ini memberikan rekomendasi anggota tim berdasarkan metode perhitungan SPK.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* **Manajemen Kriteria:** Pengguna dapat menambah, mengedit, dan mengelola daftar kriteria yang akan digunakan dalam penilaian (misalnya: Keahlian Teknis, Pengalaman Project, Komunikasi, Ketersediaan Waktu) beserta bobot prioritasnya.
+* **Manajemen Anggota Tim:** Pengguna dapat menambah, mengedit, dan mengelola daftar anggota tim potensial beserta detail informasinya.
+* **Input Penilaian:** Menyediakan antarmuka untuk memberikan nilai/skor pada setiap anggota tim berdasarkan setiap kriteria yang telah ditentukan.
+* **Perhitungan SPK:** Mengimplementasikan metode perhitungan Sistem Pendukung Keputusan (misalnya: Simple Additive Weighting - SAW) untuk menghasilkan skor akhir bagi setiap anggota tim.
+* **Hasil Rekomendasi:** Menampilkan peringkat anggota tim berdasarkan skor SPK yang telah dihitung, mempermudah pengambilan keputusan.
+* **Dashboard Informatif:** Halaman utama yang menyajikan ringkasan statistik (jumlah kriteria, anggota, penilaian) dan visualisasi grafis (misalnya, grafik anggota tim rekomendasi teratas).
+* **Sistem Autentikasi:** Fitur login dan registrasi pengguna untuk mengamankan akses ke fungsi manajemen data (disediakan oleh Laravel Breeze).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Teknologi yang Digunakan
 
-## Learning Laravel
+* **Backend:** Laravel (PHP Framework)
+* **Database:** MySQL
+* **Frontend:** Blade Templates, Tailwind CSS, Alpine.js (untuk interaktivitas dasar)
+* **Charting Library:** Chart.js (untuk visualisasi data pada dashboard)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalasi dan Setup Proyek
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal di lingkungan pengembangan Anda.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.  **Kloning Repositori:**
+    Buka terminal atau Git Bash, lalu kloning repositori ini:
+    ```bash
+    git clone [https://github.com/faiz140405/projek-SPK-Pemilihan-Anggota-Kelompok-.git](https://github.com/faiz140405/projek-SPK-Pemilihan-Anggota-Kelompok-.git)
+    cd projek-SPK-Pemilihan-Anggota-Kelompok-
+    ```
 
-## Laravel Sponsors
+2.  **Instal Dependensi Composer:**
+    ```bash
+    composer install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3.  **Salin File Lingkungan dan Buat Kunci Aplikasi:**
+    Laravel membutuhkan file `.env` untuk konfigurasi lingkungan.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-### Premium Partners
+4.  **Konfigurasi Database:**
+    Buka file `.env` dengan editor teks Anda dan sesuaikan detail koneksi database:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=nama_database_anda  # Ganti dengan nama database yang Anda buat
+    DB_USERNAME=username_database_anda # Ganti dengan username MySQL Anda (misal: root)
+    DB_PASSWORD=password_database_anda # Ganti dengan password MySQL Anda (kosong jika tidak ada)
+    ```
+    **Penting:** Pastikan Anda telah membuat database dengan nama yang sama di server MySQL/MariaDB Anda (misalnya melalui phpMyAdmin atau MySQL Workbench).
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+5.  **Jalankan Migrasi Database:**
+    Ini akan membuat tabel-tabel yang diperlukan di database Anda (pengguna, kriteria, anggota tim, penilaian).
+    ```bash
+    php artisan migrate
+    ```
+    *Jika Anda ingin menghapus semua tabel dan membuat ulang dari awal (misalnya saat *development* awal), Anda bisa gunakan `php artisan migrate:fresh`.*
 
-## Contributing
+6.  **Instal Dependensi NPM dan Kompilasi Aset Frontend:**
+    Laravel menggunakan Vite (melalui NPM) untuk mengelola aset CSS dan JavaScript (seperti Tailwind CSS dan Alpine.js).
+    ```bash
+    npm install
+    npm run dev
+    ```
+    **Catatan:** Biarkan perintah `npm run dev` berjalan di *terminal* terpisah selama Anda mengembangkan aplikasi, karena ini akan mengkompilasi ulang aset secara otomatis saat ada perubahan.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7.  **Jalankan Server Pengembangan Laravel:**
+    ```bash
+    php artisan serve
+    ```
 
-## Code of Conduct
+8.  **Akses Aplikasi:**
+    Buka *browser* Anda dan kunjungi URL berikut:
+    `http://127.0.0.1:8000`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Anda akan melihat halaman *landing* Laravel. Anda bisa mendaftar akun baru dan mulai menggunakan fitur SPK.
 
-## Security Vulnerabilities
+## Cara Menggunakan Aplikasi
 
+1.  **Daftar/Login:** Buat akun baru atau masuk ke akun yang sudah ada.
+2.  **Input Kriteria:** Tambahkan kriteria penilaian beserta bobotnya (misalnya, "Keahlian Frontend" dengan bobot 8, "Keahlian Backend" dengan bobot 7, dst.).
+3.  **Daftar Anggota Tim:** Tambahkan detail anggota tim yang akan dinilai.
+4.  **Input Penilaian:** Berikan skor untuk setiap anggota tim di setiap kriteria.
+5.  **Lihat Hasil SPK:** Sistem akan menghitung skor akhir dan menampilkan peringkat anggota tim.
+6.  **Dashboard:** Lihat ringkasan data dan grafik rekomendasi anggota tim teratas.
+
+## Kontribusi
+
+Kami menyambut kontribusi untuk proyek ini! Jika Anda ingin membantu, silakan ikuti langkah-langkah berikut:
+1.  *Fork* repositori ini.
+2.  Buat cabang baru untuk fitur Anda (`git checkout -b fitur/nama-fitur-anda`).
+3.  Lakukan perubahan dan *commit* (`git commit -m "Deskripsi perubahan"`).
+4.  Dorong perubahan ke cabang Anda (`git push origin fitur/nama-fitur-anda`).
+5.  Buat *Pull Request* baru.
+
+---
+Dikembangkan oleh: **Faiz Nizar Nu'aim**
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
